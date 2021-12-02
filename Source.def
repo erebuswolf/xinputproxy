@@ -1,0 +1,13 @@
+;LIBRARY   XInput9_1_0
+VERSION   65535.3
+EXPORTS
+   DllMain   @1
+   XInputGetCapabilities @2
+   XInputGetDSoundAudioDeviceGuids @3
+   XInputGetState @4
+   XInputSetState @5
+   XInputEnable @6
+   XInputGetBatteryInformation @7
+   XInputGetKeystroke @8
+   XInputGetAudioDeviceIds @9
+   xinputoken                @10
