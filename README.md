@@ -17,11 +17,11 @@ The file should be placed in the same directory as the game executable, and rena
 - XInput1_4.dll
 - XInput9_1_0.dll
 
-The name depends on which one the game uses. Either create all 5 files, use ProcessExplor and check to see which one is used by the game. When a dll is loaded it will create a companion .log file; just check to see which log file list controller status being accesed.
+The name depends on which dll the game uses. Either create all 5 files and don't bother, or use ProcessExplorer and check to see which one is loaded by the game. When a dll is loaded it will create a companion .log file; just check to see which log file lists controller status being accesed; you could then remove the other dlls.
 
 Disclamer of liability
 ---------
-Some Anti-cheat solutions might flag this as cheating, so consider yourself warned. I personally try to avoid games with online coponent.
+Some Anti-Cheat solutions might flag this as cheating, so consider yourself warned. I personally try to avoid games with online coponent.
 
 That being said, if you decide to use this tool, you are doing so at your own risk. I, and any persons involved in the development of this tool, cannot be held accountable for any damages caused by the use of this tool. I do not offer any advice on how anyone should use it or where to use it.
 
