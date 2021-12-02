@@ -19,6 +19,12 @@ The file should be placed in the same directory as the game executable, and rena
 
 The name depends on which one the game uses. Either create all 5 files, use ProcessExplor and check to see which one is used by the game. When a dll is loaded it will create a companion .log file; just check to see which log file list controller status being accesed.
 
+Disclamer of liability
+---------
+Some Anti-cheat solutions might flag this as cheating, so consider yourself warned. I personally try to avoid games with online coponent.
+
+That being said, if you decide to use this tool, you are doing so at your own risk. I, and any persons involved in the development of this tool, cannot be held accountable for any damages caused by the use of this tool. I do not offer any advice on how anyone should use it or where to use it.
+
 Copyright
 ---------
 xinputproxy is Copyright 2021 Mircea-Dacian Munteanu under the New BSD License (BSD 3-clause), see included LICENSE file.
