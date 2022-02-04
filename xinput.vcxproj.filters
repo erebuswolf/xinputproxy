@@ -46,5 +46,7 @@
     <None Include="Source.def">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="LICENSE" />
+    <None Include="README.md" />
   </ItemGroup>
 </Project>

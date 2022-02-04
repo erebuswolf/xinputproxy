@@ -4,7 +4,7 @@ xinputproxy is a proxy dll for XInput 1.4 or 9
 
 Although it could be used for all manner of filtering of controller messages (e.g. disable Vibration if the game does not make it configurable, looking at you LOTR : War in the North), I have personally used it in the game Darkwood to be able to disable running.
 
-In Darkwood, the PC is wieved top-down and their movement is controlled with the right stick. When the stick is pushed to the edge, the PC starts running; this was rather annoying in a fight, when instead of winding-up for an attack and waiting for the best moment to strike, the character would just start running away if, in the rush of the moment, I had pushed the stick too far.
+In Darkwood, the PC is viewed top-down and their movement is controlled with the right stick. When the stick is pushed to the edge, the PC starts running; this was rather annoying in a fight, when instead of winding-up for an attack and waiting for the best moment to strike, the character would just start running away if, in the rush of the moment, I had pushed the stick too far.
 
 A proxydll for the XInput driver could be used to artificially restrict the stick movement: even when the stick is close to the edge, always a lower value would be reported to the application/game; this prevents the PC from running. The posibility of running can be restored by pressing the stick (configurable) which restores the full range of movement; another press will re-enable the restriction.
 
@@ -21,9 +21,9 @@ The name depends on which dll the game uses. Either create all 5 files and don't
 
 Disclamer of liability
 ---------
-Some Anti-Cheat solutions might flag this as cheating, so consider yourself warned. I personally try to avoid games with online coponent.
+Some Anti-Cheat solutions might flag this as cheating, so consider yourself warned. I personally try to avoid games with online component.
 
-That being said, if you decide to use this tool, you are doing so at your own risk. I, and any persons involved in the development of this tool, cannot be held accountable for any damages caused by the use of this tool. I do not offer any advice on how anyone should use it or where to use it.
+That being said, if you decide to use this tool, you are doing so at your own risk. I, and any persons involved in the development of this tool, cannot be held accountable for any damages caused by the use of this tool. My opinions, as expressed here, should not be taken as advice to how YOU, or any other person, should or should not use this software.
 
 Copyright
 ---------
