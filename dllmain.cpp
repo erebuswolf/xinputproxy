@@ -112,9 +112,9 @@ DWORD WINAPI XInputGetState
     static bool override_in_effect[MAX_CONTROLLERS] = { false };
     static bool override_button_pressed[MAX_CONTROLLERS] = { false };
     LOADDLL();
-    //LogInfo("Called %s: ", __func__);
-    //LogInfo(" idx:%d state:%p", dwUserIndex, pState);
-    //LogInfo("\r\n");
+    LogInfo("Called %s: ", __func__);
+    LogInfo(" idx:%d state:%p", dwUserIndex, pState);
+    LogInfo("\r\n");
     DWORD ercd = ((fpt_XInputGetState)fp_XInputGetState)(dwUserIndex, pState);
     if (ERROR_SUCCESS != ercd) return ercd;
 
@@ -155,9 +155,9 @@ DWORD WINAPI XInputSetState
 )
 {
     LOADDLL();
-    //LogInfo("Called %s: ", __func__);
-    //LogInfo(" idx:%d state:%p", dwUserIndex, pVibration);
-    //LogInfo("\r\n");
+    LogInfo("Called %s: ", __func__);
+    LogInfo(" idx:%d state:%p", dwUserIndex, pVibration);
+    LogInfo("\r\n");
     DWORD ercd = ((fpt_XInputSetState)fp_XInputSetState)(dwUserIndex, pVibration);
     //CHECK_RETCODE(ercd);
     return ercd;
@@ -172,9 +172,9 @@ DWORD WINAPI XInputGetCapabilities
 )
 {
     LOADDLL();
-    //LogInfo("Called %s: ", __func__);
-    //LogInfo(" idx:%d flags:0x%x", dwUserIndex, dwFlags);
-    //LogInfo("\r\n");
+    LogInfo("Called %s: ", __func__);
+    LogInfo(" idx:%d flags:0x%x", dwUserIndex, dwFlags);
+    LogInfo("\r\n");
     DWORD ercd = ((fpt_XInputGetCapabilities)fp_XInputGetCapabilities)(dwUserIndex, dwFlags, pCapabilities);
     //CHECK_RETCODE(ercd);
     return ercd;
@@ -188,9 +188,9 @@ DWORD XInputGetDSoundAudioDeviceGuids(
 )
 {
     LOADDLL();
-    //LogInfo("Called %s: ", __func__);
-    //LogInfo(" idx:%d", dwUserIndex);
-    //LogInfo("\r\n");
+    LogInfo("Called %s: ", __func__);
+    LogInfo(" idx:%d", dwUserIndex);
+    LogInfo("\r\n");
     DWORD ercd = ((fpt_XInputGetDSoundAudioDeviceGuids)fp_XInputGetDSoundAudioDeviceGuids)(dwUserIndex, pDSoundRenderGuid, pDSoundCaptureGuid);
     //CHECK_RETCODE(ercd);
     return ercd;
@@ -202,9 +202,9 @@ void  WINAPI XInputEnable(
 )
 {
     LOADDLL();
-    //LogInfo("Called %s: ", __func__);
-    //LogInfo(" enable:%d", enable);
-    //LogInfo("\r\n");
+    LogInfo("Called %s: ", __func__);
+    LogInfo(" enable:%d", enable);
+    LogInfo("\r\n");
     ((fpt_XInputEnable)fp_XInputEnable)(enable);
     return;
 }
@@ -220,9 +220,9 @@ DWORD WINAPI XInputGetAudioDeviceIds
 )
 {
     LOADDLL();
-    //LogInfo("Called %s: ", __func__);
-    //LogInfo(" idx:%d", dwUserIndex);
-    //LogInfo("\r\n");
+    LogInfo("Called %s: ", __func__);
+    LogInfo(" idx:%d", dwUserIndex);
+    LogInfo("\r\n");
     DWORD ercd = ((fpt_XInputGetAudioDeviceIds)fp_XInputGetAudioDeviceIds)(dwUserIndex, pRenderDeviceId, pRenderCount, pCaptureDeviceId, pCaptureCount);
     //CHECK_RETCODE(ercd);
     return ercd;
@@ -237,9 +237,9 @@ DWORD WINAPI XInputGetBatteryInformation
 )
 {
     LOADDLL();
-    //LogInfo("Called %s: ", __func__);
-    //LogInfo(" idx:%d", dwUserIndex);
-    //LogInfo("\r\n");
+    LogInfo("Called %s: ", __func__);
+    LogInfo(" idx:%d", dwUserIndex);
+    LogInfo("\r\n");
     DWORD ercd = ((fpt_XInputGetBatteryInformation)fp_XInputGetBatteryInformation)(dwUserIndex, devType, pBatteryInformation);
     //CHECK_RETCODE(ercd);
     return ercd;
@@ -254,9 +254,9 @@ DWORD WINAPI XInputGetKeystroke
 )
 {
     LOADDLL();
-    //LogInfo("Called %s: ", __func__);
-    //LogInfo(" idx:%d", dwUserIndex);
-    //LogInfo("\r\n");
+    LogInfo("Called %s: ", __func__);
+    LogInfo(" idx:%d", dwUserIndex);
+    LogInfo("\r\n");
     DWORD ercd = ((fpt_XInputGetKeystroke)fp_XInputGetKeystroke)(dwUserIndex, dwReserved, pKeystroke);
     //CHECK_RETCODE(ercd);
     return ercd;
@@ -299,6 +299,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
             CreateLogFile(LOG_FILENAME);
             LOGINFO("Dll filename extraction failed for: %s\r\n", mfname);
         }
+        LogInfo("DllMain finished!!!!\r\n");
         LogInfo("DllMain finished\r\n");
         break;
     case DLL_THREAD_ATTACH: break;
@@ -321,5 +322,7 @@ static void loadFunction(HINSTANCE dllHandle, LPCSTR name, FARPROC* found)
             LogInfo("Failed to find function %s\r\n", name);
             *found = (FARPROC)dummy_func;
         }
+
+        LogInfo("Found function %s\r\n", name);
     }
 }
